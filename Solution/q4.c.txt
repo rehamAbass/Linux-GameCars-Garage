@@ -1,0 +1,410 @@
+//////////////////////////////////////////////////////////////////////////////////////
+//				HW 4 -	course : OPERATING SYSTEM
+//
+//				NAME	:	" REHAM ABASS "
+//
+//				ID	:		[ 201277811 ]
+/////////////////////////////////////////////////////////////////////////////////////
+// 			LIBRARIES :
+#include<stdio.h>							//for input Output
+#include<stdlib.h>							//for allocations
+#include<time.h> 							// for random sleep
+#include<string.h>							//for strings
+#include<pthread.h>							// each request gonna work by thread
+#include<fcntl.h>							//for files
+#include<unistd.h>
+#include<semaphore.h>
+#include<sys/types.h>
+#include<sys/stat.h>
+////////////////////////////////////
+////////////////////////////////////
+//			GLOBAL VARIABIELES :
+int number_of_requests =0;
+
+struct res{		//need denamic allocation//
+	int id;
+	char name[80];		//need denamic allocation//
+	int sys;
+}res;
+////////////////////////
+struct rep{
+	int id;
+	char name[80];
+	int hours;
+	int count;
+	int *list;
+}rep;
+////////////////////////
+struct req{
+	long car;
+	int inhour;
+	int count;
+	int *list; 
+}req;
+////////////////////////
+struct req * arr_req;
+struct res * arr_res ;
+struct rep * arr_rep;
+sem_t * sem_resources;
+int hour;
+int requests_number;
+int resources_number;
+int repairs_number;
+int completed=0;
+int day=0;
+////////////////////////////////////
+//			FUNCTIONS :
+
+//////////////////////////////////////////////////////////////////////
+void* show_hour(){
+	hour =0;
+	while(1){
+	printf("\n time: %d\n",hour);
+	if(hour == 0){ day++; printf("\nday %d\n",day);}
+	sleep(1);
+	hour = (hour +1)%24; 
+	}
+}
+/////////////////////////////////////////////////////////////////////
+int search_resource(int res_id){ // search the index of resource in the array of resources
+	int i;
+	for(i=0; i< resources_number;i++){
+		if(res_id == arr_res[i].id)
+			return i;
+	}
+return (-1);
+}
+///////////////////////////////////////////////////////////////////
+int search_repair(int repair_id){ // search the index in the array of repairs
+	int i;
+	for(i=0; i< repairs_number;i++){
+		if(repair_id == arr_rep[i].id)
+			return i;
+	}
+return (-1);
+}
+/////////////////////////////////////////////////////////////////////
+void* deal(void * a){
+	int i = *((int*)a);
+	printf("\ncar: %ld time: %d dealing with his request\n",arr_req[i].car,hour);
+	int j,k;
+	for(j=0;j< arr_req[i].count;j++){	// pass on all list of repairs related to this request
+		// in each repair:
+		int repair_id = arr_req[i].list[j];
+		int index_rep = search_repair(repair_id);
+		if(index_rep == -1) {printf("\nNo such repair id"); exit(1);}		
+		for(k=0; k<arr_rep[index_rep].count;k++){ //pass on all related resources 
+			int resource_id = arr_rep[index_rep].list[k];			
+			int index_res = search_resource(resource_id);
+			if(index_res == -1) {printf("\nNo such resource id"); exit(1);}
+
+			sem_wait(&sem_resources[index_res]);
+
+			//printf("\ncar : %d time:%d got the resource name: %s for repair name : %s\n",arr_req[i].car,hour,arr_res[index_res].name,arr_rep[index_rep].name);			
+			}//for resources
+
+	printf("\ncar : %ld time : %d started %s.\n",arr_req[i].car,hour,arr_rep[index_rep].name);
+			sleep(arr_rep[index_rep].hours);
+
+			printf("\ncar : %ld  time : %d completed %s.\n",arr_req[i].car,hour,arr_rep[index_rep].name);
+		//post resources for finishing the repair
+		for(k=0; k<arr_rep[index_rep].count;k++){ //pass on all related resources 
+			 int resource_id = arr_rep[index_rep].list[k];			
+			 int index_res = search_resource(resource_id);
+			sem_post(&sem_resources[index_res]);
+			}
+		}	
+printf("\n car : %ld  time: %d service complete.\n",arr_req[i].car,hour);
+completed ++;
+printf("\nUNTIL NOW %d COMPLETED REQUESTS !!!!!!\n",completed);
+return NULL;
+}
+//////////////////////////////////////////////////////////////////////
+void * request (){
+// this function pass on all the requests to check request in the same hour send it.
+int i;
+pthread_t * tarr;
+int *flags =(int*)malloc(requests_number * sizeof(int));
+if(flags == NULL){printf("Can't allocate");exit(1);}
+for(i=0 ; i< requests_number;i++) flags[i] =0;
+tarr = (pthread_t*)malloc(requests_number * sizeof(pthread_t));
+if(tarr == NULL){printf("Can't allocate");exit(1);}
+
+int *indexes =(int*)malloc(requests_number * sizeof(int));
+if(indexes == NULL){printf("Can't allocate");exit(1);}
+
+for(i=0 ; i< requests_number;i++) indexes[i] =i;
+
+while(1){
+if(completed == requests_number){
+	printf("\n\n\n All the requests completed = %d!!!!\n\n\n",completed);
+	break;
+}
+for(i=0 ; i< requests_number;i++){
+	if(arr_req[i].inhour == hour && flags[i] ==0){
+		printf("\ncar: %ld time: %d  car comes to the garage\n",arr_req[i].car,hour);
+		flags[i]=1;
+		pthread_create(&tarr[i],NULL, deal,(void*)&indexes[i]);		
+		}//if
+
+	}//for 
+
+	}//while
+for(i=0 ; i< requests_number;i++){
+		pthread_join(tarr[i],NULL);	
+		}//for join
+return NULL;
+}
+//////////////////////////////////////////////////////////////////////
+int number_of_lines_in_file(char* file){			
+	int lines=0;
+	char c;
+	int d = open(file, O_RDONLY, 0644);
+	if (d == -1) {printf("\ncan't open file\n");exit(0);}
+	while(read(d,&c,1) == 1 ){				//if he succede to read one byte as giving	
+		if(c =='\n') lines++;
+	}
+if(lines >0)
+	lines--;									//because it counts also the last line(by \n) which is empty
+	close(d);
+	return lines;
+}
+///////////////////////
+void copy_resources_file(char * resources_file){	
+	int id,sys;
+	int size =2560;
+ 	char all[2560],line[256];
+	int i=0, j=0,k=0;
+	char** arrlines;
+	char* words[3];
+	char*s1_line,*s3;
+	int length  = number_of_lines_in_file(resources_file);
+resources_number =length;
+	printf("\n\nResources success to copy from file to array of structures:\n\n");
+	arrlines=(char**)malloc(length*sizeof(char *));
+	if(arrlines == NULL){printf("\nCan't allocate");exit(1);}
+	for(i=0; i<length;i++){
+		arrlines[i] = (char*)malloc(sizeof(char));
+	if(arrlines[i] == NULL){printf("\nCan't allocate");exit(1);}
+		}
+	i=0;
+	int d = open(resources_file, O_RDONLY);
+	arr_res = (struct res *)malloc(length* sizeof(struct res));
+	if(arr_res== NULL){printf("\ncan't allocate"); exit(1);}
+	read(d,all,size);
+	s1_line = strtok (all,"\n");
+	while ( i<length){
+		arrlines[i]=s1_line;
+		s1_line = strtok (NULL,"\n");
+		i++;
+ 	}
+	while(k<length){
+		j=0;
+		strcpy(line,arrlines[k]);
+		s3 = strtok(line,"\t");
+		while(j<3){
+			words[j]=s3;
+			s3=strtok(NULL,"\t");
+			j++;
+			}
+		
+   	id = atoi(words[0]);
+	sys = atoi(words[2]);
+	arr_res[k].id = id;
+	strcpy(arr_res[k].name,words[1]);
+	arr_res[k].sys = sys;
+//printf("\n arr_res[%d] = 	%d 	%s	%d",k,arr_res[k].id ,arr_res[k].name,arr_res[k].sys);
+k++;
+}
+	printf("\n****************************************************************\n\n");
+	close(d);
+}
+
+/////////////////////////////////////////////////////////////////////
+void copy_requests_file(char * requests_file){
+	printf("\n\n\nRequests success to copy from file to array of structures:\n\n");
+	long car;	
+	int inhour,count=0;
+	int size =2560;
+ 	char all[2560],line[256];
+	int i=0, j=0,k=0,u,y=0;
+	char** arrlines;
+	char* words[3];
+	char*s1_line,*s3;
+	char ** mword;
+	int length  = number_of_lines_in_file(requests_file);
+requests_number =length;
+	arrlines=(char**)malloc(length*sizeof(char *));
+	if(arrlines == NULL){printf("\ncan't allocate"); exit(1);}
+	for(i=0; i<length;i++){
+		arrlines[i] = (char*)malloc(sizeof(char));
+		if(arrlines[i] == NULL){printf("\ncan't allocate"); exit(1);}
+		}
+	i=0;
+	int d = open(requests_file, O_RDONLY);
+	arr_req = (struct req *)malloc(length* sizeof(struct req));
+	if(arr_req == NULL){printf("\ncan't allocate"); exit(1);}
+	read(d,all,size);
+	s1_line = strtok (all,"\n");
+	while ( i< length){
+		arrlines[i]=s1_line;
+		s1_line = strtok (NULL,"\n");
+		i++;
+ 	}
+// each line copied to char* arrlines
+	while(k<length){
+		j=0;
+		strcpy(line,arrlines[k]);
+		s3 = strtok(line,"\t");
+		while(j<3){
+			words[j]=s3;
+			s3=strtok(NULL,"\t");
+
+			j++;
+		}
+	count = atoi(words[2]);
+   	car = atoi(words[0]);
+	inhour = atoi(words[1]);
+	arr_req[k].car = car;
+	arr_req[k].inhour =inhour;
+	arr_req[k].count=count;
+//printf("\n\nrequest [%d] = car %ld incoming hour = %d",k,arr_req[k].car,arr_req[k].inhour);
+				
+	//			printf("\n\tnumber of repairs : = %d",count);
+
+				mword =(char**)malloc(count * sizeof(char*));
+				if(mword == NULL){printf("\ncan't allocate"); exit(1);}
+				for(u =0 ;u< count;u++){
+					mword[u] =(char*)malloc(256*sizeof(char));
+					if(mword[u] == NULL){printf("\ncan't allocate"); exit(1);}
+					}
+				arr_req[k].list =(int*)malloc(count * sizeof(int));
+				y=0;
+				while(y < count){
+					mword[y]=s3;
+					s3=strtok(NULL,"\t");
+					arr_req[k].list[y] =atoi(mword[y]);
+					//printf("\n		repair [%d] = 	%d",y,arr_req[k].list[y]);					
+					y++;
+				}
+					
+
+k++;
+}
+	printf("\n****************************************************************\n\n");
+	close(d);
+}
+///////////////////////////////////////////////////////////////////////////////////
+void copy_repairs_file(char * repairs_file){
+	int id,hours,count=0;
+	int size =2560;
+ 	char all[2560],line[256],name[80];
+	int i=0, j=0,k=0,u,y=0;
+	char** arrlines;
+	char* words[4];
+	char*s1_line,*s3;
+	char ** mword;
+	int length  = number_of_lines_in_file(repairs_file);
+repairs_number =length;
+	printf("\n\n\nRepairs success to copy to array of structures:\n\n");
+	arrlines=(char**)malloc(length*sizeof(char *));
+	if(arrlines == NULL){printf("\ncan't allocate"); exit(1);}
+
+	for(i=0; i<length;i++){
+		arrlines[i] = (char*)malloc(sizeof(char));
+		if(arrlines[i] == NULL){printf("\ncan't allocate"); exit(1);}
+		}
+	i=0;
+	int d = open(repairs_file, O_RDONLY);
+	arr_rep = (struct rep *)malloc(length* sizeof(struct rep));
+	if(arr_rep == NULL){printf("\ncan't allocate"); exit(1);}
+	read(d,all,size);
+	s1_line = strtok (all,"\n");
+	while ( i< length){
+		arrlines[i]=s1_line;
+		s1_line = strtok (NULL,"\n");
+		i++;
+ 	}
+// each line copied to char* arrlines
+	while(k<length){
+		j=0;
+		strcpy(line,arrlines[k]);
+		s3 = strtok(line,"\t");
+		while(j<4){
+			words[j]=s3;
+			s3=strtok(NULL,"\t");
+
+			j++;
+		}
+	count = atoi(words[3]);
+   	id = atoi(words[0]);
+	strcpy(name,words[1]);
+	hours = atoi(words[2]);
+	arr_rep[k].id = id;
+	strcpy(arr_rep[k].name,name);
+	arr_rep[k].hours =hours;
+	arr_rep[k].count=count;
+//printf("\n\nrepairs [%d] = %d %s %d	count =%d",k,arr_rep[k].id ,arr_rep[k].name,arr_rep[k].hours,arr_rep[k].count);
+	//			printf("\n\tnumber of resources : = %d",count);
+				mword =(char**)malloc(count * sizeof(char*));
+				if(mword == NULL){printf("\ncan't allocate"); exit(1);}
+				for(u =0 ;u< count;u++){
+					mword[u] =(char*)malloc(256*sizeof(char));
+					if(mword[u] == NULL){printf("\ncan't allocate"); exit(1);}
+					}
+				arr_rep[k].list =(int*)malloc(count * sizeof(int));
+				if(arr_rep[k].list == NULL){printf("\ncan't allocate"); exit(1);}
+				y=0;
+				
+				while(y < count){
+					mword[y]=s3;
+					s3=strtok(NULL,"\t");
+					arr_rep[k].list[y] =atoi(mword[y]);
+					//printf("\n		resource [%d] = 	%d",y,arr_rep[k].list[y]);					
+					y++;
+				}
+				
+	
+k++;
+}
+	printf("\n****************************************************************\n\n");
+	close(d);
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+void iniate_semaphores_of_resources(){
+	int length = resources_number;
+	sem_resources = (sem_t *)malloc(length * sizeof(sem_t));
+	if(sem_resources == NULL){printf("\n can't allocate sem resources\n");exit(1);}
+	int i;
+	printf("\n\nsuccess to Iniate array of semaphores\nEach resource has semaphore iniated by his number of systems\n");
+	for(i=0; i<length;i++){
+		unsigned int num =(unsigned int)arr_res[i].sys;
+		sem_init(&sem_resources[i],0,num);
+		int val;
+		sem_getvalue(&sem_resources[i],&val);
+		//printf("\n resource %d has -%d- systems, sem iniated by %d\n",i,val,val);
+	}
+	printf("\n****************************************************************\n\n");
+}
+
+//////////////////////////////////////////////////////////////////////
+//			MAIN FUNCTION :
+int main(int argc , char * argv[]){
+
+if(argc != 4 ){
+	printf("\nTry again ..\nMust be 3 files: resources.txt repairs.txt requests.txt\n");
+exit(1);
+}
+copy_resources_file(argv[1]);
+copy_repairs_file(argv[2]);
+copy_requests_file(argv[3]);
+iniate_semaphores_of_resources();
+pthread_t tHour,trequest;
+pthread_create(&tHour, NULL , show_hour ,NULL);
+pthread_create(&trequest,NULL, request ,NULL);
+
+pthread_join(trequest,NULL);
+
+return 0;
+}
+//////////////////////////////////////////////////////////////////////////
