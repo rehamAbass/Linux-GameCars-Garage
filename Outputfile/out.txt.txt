@@ -1,0 +1,1155 @@
+
+
+Resources success to copy from file to array of structures:
+
+
+****************************************************************
+
+
+
+
+Repairs success to copy to array of structures:
+
+
+****************************************************************
+
+
+
+
+Requests success to copy from file to array of structures:
+
+
+****************************************************************
+
+
+
+success to Iniate array of semaphores
+Each resource has semaphore iniated by his number of systems
+
+****************************************************************
+
+
+ time: 0
+
+day 1
+
+ time: 1
+
+ time: 2
+
+ time: 3
+
+ time: 4
+
+ time: 5
+
+ time: 6
+
+ time: 7
+
+car: 3756413 time: 7  car comes to the garage
+
+car: 2699238 time: 7  car comes to the garage
+
+car: 6619273 time: 7  car comes to the garage
+
+car: 3111028 time: 7  car comes to the garage
+
+car: 4651474 time: 7  car comes to the garage
+
+car: 6211606 time: 7  car comes to the garage
+
+car: 3081767 time: 7  car comes to the garage
+
+car: 1099200 time: 7  car comes to the garage
+
+car: 3756413 time: 7 dealing with his request
+
+car : 3756413 time : 7 started paint job.
+
+car: 2699238 time: 7 dealing with his request
+
+car : 2699238 time : 7 started shock absorber replacement.
+
+car: 6619273 time: 7 dealing with his request
+
+car : 6619273 time : 7 started transmission replacement.
+
+car: 3111028 time: 7 dealing with his request
+
+car : 3111028 time : 7 started flat tire repair.
+
+car: 4651474 time: 7 dealing with his request
+
+car : 4651474 time : 7 started timing belt replacement.
+
+car: 6211606 time: 7 dealing with his request
+
+car: 3081767 time: 7 dealing with his request
+
+car : 3081767 time : 7 started diagnostics.
+
+car: 1099200 time: 7 dealing with his request
+
+car : 1099200 time : 7 started battery replacement.
+
+ time: 8
+
+car: 6193293 time: 8  car comes to the garage
+
+car: 3956065 time: 8  car comes to the garage
+
+car: 1123259 time: 8  car comes to the garage
+
+car: 7389633 time: 8  car comes to the garage
+
+car: 9030226 time: 8  car comes to the garage
+
+car: 2986376 time: 8  car comes to the garage
+
+car: 1180605 time: 8  car comes to the garage
+
+car: 7420764 time: 8  car comes to the garage
+
+car : 3111028  time : 8 completed flat tire repair.
+
+ car : 3111028  time: 8 service complete.
+
+UNTIL NOW 1 COMPLETED REQUESTS !!!!!!
+
+car : 3081767  time : 8 completed diagnostics.
+
+ car : 3081767  time: 8 service complete.
+
+UNTIL NOW 2 COMPLETED REQUESTS !!!!!!
+
+car : 1099200  time : 8 completed battery replacement.
+
+car : 6211606 time : 8 started brake repair.
+
+car: 6193293 time: 8 dealing with his request
+
+car: 3956065 time: 8 dealing with his request
+
+car: 1123259 time: 8 dealing with his request
+
+car: 7389633 time: 8 dealing with his request
+
+car : 7389633 time : 8 started battery replacement.
+
+car: 9030226 time: 8 dealing with his request
+
+car: 2986376 time: 8 dealing with his request
+
+car: 1180605 time: 8 dealing with his request
+
+car : 1180605 time : 8 started battery replacement.
+
+car: 7420764 time: 8 dealing with his request
+
+ time: 9
+
+car: 9195627 time: 9  car comes to the garage
+
+car: 7676201 time: 9  car comes to the garage
+
+car: 2735179 time: 9  car comes to the garage
+
+car: 8568724 time: 9  car comes to the garage
+
+car: 5899891 time: 9  car comes to the garage
+
+car: 2278430 time: 9  car comes to the garage
+
+car : 2699238  time : 9 completed shock absorber replacement.
+
+car : 2699238 time : 9 started flat tire repair.
+
+car : 7389633  time : 9 completed battery replacement.
+
+ car : 7389633  time: 9 service complete.
+
+UNTIL NOW 3 COMPLETED REQUESTS !!!!!!
+
+car : 1180605  time : 9 completed battery replacement.
+
+car: 9195627 time: 9 dealing with his request
+
+car: 7676201 time: 9 dealing with his request
+
+car: 2735179 time: 9 dealing with his request
+
+car: 8568724 time: 9 dealing with his request
+
+car: 5899891 time: 9 dealing with his request
+
+car : 5899891 time : 9 started diagnostics.
+
+car: 2278430 time: 9 dealing with his request
+
+ time: 10
+
+car: 3274520 time: 10  car comes to the garage
+
+car: 7081289 time: 10  car comes to the garage
+
+car: 2599852 time: 10  car comes to the garage
+
+car: 5133309 time: 10  car comes to the garage
+
+car: 9082407 time: 10  car comes to the garage
+
+car: 4925410 time: 10  car comes to the garage
+
+car: 2506509 time: 10  car comes to the garage
+
+car: 6909267 time: 10  car comes to the garage
+
+car : 6211606  time : 10 completed brake repair.
+
+car : 6211606 time : 10 started headlights adjustment.
+
+car : 2699238  time : 10 completed flat tire repair.
+
+car : 2699238 time : 10 started battery replacement.
+
+car : 5899891  time : 10 completed diagnostics.
+
+car : 5899891 time : 10 started alternator replacement.
+
+car : 7420764 time : 10 started timing belt replacement.
+
+car: 3274520 time: 10 dealing with his request
+
+car : 3274520 time : 10 started battery replacement.
+
+car: 7081289 time: 10 dealing with his request
+
+car: 2599852 time: 10 dealing with his request
+
+car: 5133309 time: 10 dealing with his request
+
+car: 9082407 time: 10 dealing with his request
+
+car: 4925410 time: 10 dealing with his request
+
+car: 2506509 time: 10 dealing with his request
+
+car: 6909267 time: 10 dealing with his request
+
+car : 6909267 time : 10 started air filter change.
+
+ time: 11
+
+car : 4651474  time : 11 completed timing belt replacement.
+
+car : 6211606  time : 11 completed headlights adjustment.
+
+car : 2699238  time : 11 completed battery replacement.
+
+ car : 2699238  time: 11 service complete.
+
+UNTIL NOW 4 COMPLETED REQUESTS !!!!!!
+
+car : 3274520  time : 11 completed battery replacement.
+
+ car : 3274520  time: 11 service complete.
+
+UNTIL NOW 5 COMPLETED REQUESTS !!!!!!
+
+car : 6909267  time : 11 completed air filter change.
+
+car: 4930051 time: 11  car comes to the garage
+
+car: 3960674 time: 11  car comes to the garage
+
+car: 9885513 time: 11  car comes to the garage
+
+car: 1890055 time: 11  car comes to the garage
+
+car: 2239018 time: 11  car comes to the garage
+
+car: 9226856 time: 11  car comes to the garage
+
+car: 4930051 time: 11 dealing with his request
+
+car: 3960674 time: 11 dealing with his request
+
+car: 9885513 time: 11 dealing with his request
+
+car: 1890055 time: 11 dealing with his request
+
+car: 2239018 time: 11 dealing with his request
+
+car: 9226856 time: 11 dealing with his request
+
+ time: 12
+
+car : 5899891  time : 12 completed alternator replacement.
+
+car : 5899891 time : 12 started exhaust replacement.
+
+car: 4949283 time: 12  car comes to the garage
+
+car: 2968693 time: 12  car comes to the garage
+
+car: 1415035 time: 12  car comes to the garage
+
+car: 1512595 time: 12  car comes to the garage
+
+car: 7685885 time: 12  car comes to the garage
+
+car: 4766472 time: 12  car comes to the garage
+
+car: 4949283 time: 12 dealing with his request
+
+car : 4949283 time : 12 started diagnostics.
+
+car: 2968693 time: 12 dealing with his request
+
+car: 1415035 time: 12 dealing with his request
+
+car: 1512595 time: 12 dealing with his request
+
+car: 7685885 time: 12 dealing with his request
+
+car: 4766472 time: 12 dealing with his request
+
+car : 6619273  time : 12 completed transmission replacement.
+
+car : 6619273 time : 12 started alternator replacement.
+
+car : 4651474 time : 12 started engine replacement.
+
+ time: 13
+
+car: 9802046 time: 13  car comes to the garage
+
+car: 7099567 time: 13  car comes to the garage
+
+car: 2791653 time: 13  car comes to the garage
+
+car: 2113471 time: 13  car comes to the garage
+
+car: 6980676 time: 13  car comes to the garage
+
+car: 6501532 time: 13  car comes to the garage
+
+car: 6558191 time: 13  car comes to the garage
+
+car: 2895420 time: 13  car comes to the garage
+
+car : 4949283  time : 13 completed diagnostics.
+
+car : 4949283 time : 13 started headlights adjustment.
+
+car: 9802046 time: 13 dealing with his request
+
+car: 7099567 time: 13 dealing with his request
+
+car: 2791653 time: 13 dealing with his request
+
+car: 2113471 time: 13 dealing with his request
+
+car: 6980676 time: 13 dealing with his request
+
+car: 6501532 time: 13 dealing with his request
+
+car: 6558191 time: 13 dealing with his request
+
+car: 2895420 time: 13 dealing with his request
+
+car : 2895420 time : 13 started air filter change.
+
+car : 7420764  time : 13 completed timing belt replacement.
+
+car : 7420764 time : 13 started exhaust replacement.
+
+car : 5899891  time : 13 completed exhaust replacement.
+
+car : 5899891 time : 13 started brake repair.
+
+ time: 14
+
+car : 4949283  time : 14 completed headlights adjustment.
+
+car : 4949283 time : 14 started battery replacement.
+
+car : 2895420  time : 14 completed air filter change.
+
+car : 3756413  time : 14 completed paint job.
+
+car : 3756413 time : 14 started diagnostics.
+
+car : 6619273  time : 14 completed alternator replacement.
+
+car : 6619273 time : 14 started air filter change.
+
+car : 1099200 time : 14 started paint job.
+
+ time: 15
+
+car : 4949283  time : 15 completed battery replacement.
+
+ car : 4949283  time: 15 service complete.
+
+UNTIL NOW 6 COMPLETED REQUESTS !!!!!!
+
+car : 3756413  time : 15 completed diagnostics.
+
+car : 3756413 time : 15 started air filter change.
+
+car : 6619273  time : 15 completed air filter change.
+
+car : 7420764  time : 15 completed exhaust replacement.
+
+car : 7420764 time : 15 started alternator replacement.
+
+car : 5899891  time : 15 completed brake repair.
+
+ car : 5899891  time: 15 service complete.
+
+UNTIL NOW 7 COMPLETED REQUESTS !!!!!!
+
+ time: 16
+
+car : 3756413  time : 16 completed air filter change.
+
+ time: 17
+
+car : 7420764  time : 17 completed alternator replacement.
+
+ car : 7420764  time: 17 service complete.
+
+UNTIL NOW 8 COMPLETED REQUESTS !!!!!!
+
+car : 5133309 time : 17 started tire replacement.
+
+ time: 18
+
+car : 4651474  time : 18 completed engine replacement.
+
+car : 4651474 time : 18 started brake repair.
+
+car : 2599852 time : 18 started transmission replacement.
+
+car : 5133309  time : 18 completed tire replacement.
+
+car : 5133309 time : 18 started exhaust replacement.
+
+ time: 19
+
+ time: 20
+
+car : 4651474  time : 20 completed brake repair.
+
+car : 4651474 time : 20 started tire replacement.
+
+car : 5133309  time : 20 completed exhaust replacement.
+
+car : 5133309 time : 20 started flat tire repair.
+
+ time: 21
+
+car : 4651474  time : 21 completed tire replacement.
+
+ car : 4651474  time: 21 service complete.
+
+UNTIL NOW 9 COMPLETED REQUESTS !!!!!!
+
+car : 6211606 time : 21 started tire replacement.
+
+car : 5133309  time : 21 completed flat tire repair.
+
+ car : 5133309  time: 21 service complete.
+
+UNTIL NOW 10 COMPLETED REQUESTS !!!!!!
+
+car : 4930051 time : 21 started brake repair.
+
+ time: 22
+
+car : 1099200  time : 22 completed paint job.
+
+car : 7081289 time : 22 started paint job.
+
+car : 6211606  time : 22 completed tire replacement.
+
+car : 6211606 time : 22 started shock absorber replacement.
+
+ time: 23
+
+car : 4930051  time : 23 completed brake repair.
+
+car : 4930051 time : 23 started timing belt replacement.
+
+ time: 0
+
+day 2
+
+car : 2599852  time : 0 completed transmission replacement.
+
+ car : 2599852  time: 0 service complete.
+
+UNTIL NOW 11 COMPLETED REQUESTS !!!!!!
+
+car : 2239018 time : 0 started brake repair.
+
+car : 2278430 time : 0 started engine replacement.
+
+car : 6211606  time : 0 completed shock absorber replacement.
+
+ car : 6211606  time: 0 service complete.
+
+UNTIL NOW 12 COMPLETED REQUESTS !!!!!!
+
+car : 9226856 time : 0 started flat tire repair.
+
+ time: 1
+
+car : 9226856  time : 1 completed flat tire repair.
+
+ car : 9226856  time: 1 service complete.
+
+UNTIL NOW 13 COMPLETED REQUESTS !!!!!!
+
+ time: 2
+
+car : 2239018  time : 2 completed brake repair.
+
+ car : 2239018  time: 2 service complete.
+
+UNTIL NOW 14 COMPLETED REQUESTS !!!!!!
+
+ time: 3
+
+car : 4930051  time : 3 completed timing belt replacement.
+
+ time: 4
+
+ time: 5
+
+ time: 6
+
+car : 7081289  time : 6 completed paint job.
+
+ car : 7081289  time: 6 service complete.
+
+UNTIL NOW 15 COMPLETED REQUESTS !!!!!!
+
+car : 6909267 time : 6 started paint job.
+
+car : 2278430  time : 6 completed engine replacement.
+
+car : 2278430 time : 6 started shock absorber replacement.
+
+car : 2968693 time : 6 started transmission replacement.
+
+ time: 7
+
+ time: 8
+
+car : 2278430  time : 8 completed shock absorber replacement.
+
+ time: 9
+
+ time: 10
+
+ time: 11
+
+ time: 12
+
+car : 2968693  time : 12 completed transmission replacement.
+
+car : 2968693 time : 12 started tire replacement.
+
+car : 4930051 time : 12 started engine replacement.
+
+ time: 13
+
+car : 2968693  time : 13 completed tire replacement.
+
+ car : 2968693  time: 13 service complete.
+
+UNTIL NOW 16 COMPLETED REQUESTS !!!!!!
+
+car : 7676201 time : 13 started shock absorber replacement.
+
+ time: 14
+
+car : 6909267  time : 14 completed paint job.
+
+ car : 6909267  time: 14 service complete.
+
+UNTIL NOW 17 COMPLETED REQUESTS !!!!!!
+
+car : 9885513 time : 14 started paint job.
+
+ time: 15
+
+car : 7676201  time : 15 completed shock absorber replacement.
+
+car : 7676201 time : 15 started tire replacement.
+
+ time: 16
+
+car : 7676201  time : 16 completed tire replacement.
+
+car : 7099567 time : 16 started brake repair.
+
+ time: 17
+
+ time: 18
+
+car : 4930051  time : 18 completed engine replacement.
+
+ car : 4930051  time: 18 service complete.
+
+UNTIL NOW 18 COMPLETED REQUESTS !!!!!!
+
+car : 6980676 time : 18 started shock absorber replacement.
+
+car : 7685885 time : 18 started transmission replacement.
+
+car : 7099567  time : 18 completed brake repair.
+
+ time: 19
+
+ time: 20
+
+car : 6980676  time : 20 completed shock absorber replacement.
+
+ car : 6980676  time: 20 service complete.
+
+UNTIL NOW 19 COMPLETED REQUESTS !!!!!!
+
+car : 6558191 time : 20 started exhaust replacement.
+
+ time: 21
+
+ time: 22
+
+car : 9885513  time : 22 completed paint job.
+
+car : 9885513 time : 22 started headlights adjustment.
+
+car : 2113471 time : 22 started paint job.
+
+car : 6558191  time : 22 completed exhaust replacement.
+
+car : 6558191 time : 22 started shock absorber replacement.
+
+ time: 23
+
+car : 9885513  time : 23 completed headlights adjustment.
+
+car : 9885513 time : 23 started diagnostics.
+
+ time: 0
+
+day 3
+
+car : 7685885  time : 0 completed transmission replacement.
+
+ car : 7685885  time: 0 service complete.
+
+UNTIL NOW 20 COMPLETED REQUESTS !!!!!!
+
+car : 8568724 time : 0 started exhaust replacement.
+
+car : 7099567 time : 0 started transmission replacement.
+
+car : 9885513  time : 0 completed diagnostics.
+
+car : 6558191  time : 0 completed shock absorber replacement.
+
+car : 6558191 time : 0 started timing belt replacement.
+
+ time: 1
+
+ time: 2
+
+car : 8568724  time : 2 completed exhaust replacement.
+
+car : 8568724 time : 2 started air filter change.
+
+car : 1180605 time : 2 started oil change.
+
+ time: 3
+
+car : 8568724  time : 3 completed air filter change.
+
+car : 1180605  time : 3 completed oil change.
+
+ car : 1180605  time: 3 service complete.
+
+UNTIL NOW 21 COMPLETED REQUESTS !!!!!!
+
+car : 2791653 time : 3 started oil change.
+
+ time: 4
+
+car : 2791653  time : 4 completed oil change.
+
+car : 2791653 time : 4 started diagnostics.
+
+car : 2895420 time : 4 started oil change.
+
+car : 6558191  time : 4 completed timing belt replacement.
+
+ car : 6558191  time: 4 service complete.
+
+UNTIL NOW 22 COMPLETED REQUESTS !!!!!!
+
+car : 4925410 time : 4 started oil change.
+
+car : 1123259 time : 4 started exhaust replacement.
+
+ time: 5
+
+car : 2791653  time : 5 completed diagnostics.
+
+ car : 2791653  time: 5 service complete.
+
+UNTIL NOW 23 COMPLETED REQUESTS !!!!!!
+
+car : 2895420  time : 5 completed oil change.
+
+car : 4925410  time : 5 completed oil change.
+
+ car : 4925410  time: 5 service complete.
+
+UNTIL NOW 24 COMPLETED REQUESTS !!!!!!
+
+car : 7676201 time : 5 started oil change.
+
+ time: 6
+
+car : 2113471  time : 6 completed paint job.
+
+car : 7099567  time : 6 completed transmission replacement.
+
+car : 7099567 time : 6 started headlights adjustment.
+
+car : 1099200 time : 6 started flat tire repair.
+
+car : 3956065 time : 6 started engine replacement.
+
+car : 1123259  time : 6 completed exhaust replacement.
+
+ car : 1123259  time: 6 service complete.
+
+UNTIL NOW 25 COMPLETED REQUESTS !!!!!!
+
+car : 7676201  time : 6 completed oil change.
+
+ time: 7
+
+car : 7099567  time : 7 completed headlights adjustment.
+
+car : 1099200  time : 7 completed flat tire repair.
+
+car : 1099200 time : 7 started oil change.
+
+car : 2895420 time : 7 started brake repair.
+
+car : 7676201 time : 7 started flat tire repair.
+
+ time: 8
+
+car : 1099200  time : 8 completed oil change.
+
+ car : 1099200  time: 8 service complete.
+
+UNTIL NOW 26 COMPLETED REQUESTS !!!!!!
+
+car : 7676201  time : 8 completed flat tire repair.
+
+ car : 7676201  time: 8 service complete.
+
+UNTIL NOW 27 COMPLETED REQUESTS !!!!!!
+
+ time: 9
+
+car : 2895420  time : 9 completed brake repair.
+
+car : 2895420 time : 9 started paint job.
+
+car : 9802046 time : 9 started oil change.
+
+ time: 10
+
+car : 9802046  time : 10 completed oil change.
+
+ time: 11
+
+ time: 12
+
+car : 3956065  time : 12 completed engine replacement.
+
+ car : 3956065  time: 12 service complete.
+
+UNTIL NOW 28 COMPLETED REQUESTS !!!!!!
+
+car : 2735179 time : 12 started engine replacement.
+
+ time: 13
+
+ time: 14
+
+ time: 15
+
+ time: 16
+
+ time: 17
+
+car : 2895420  time : 17 completed paint job.
+
+ car : 2895420  time: 17 service complete.
+
+UNTIL NOW 29 COMPLETED REQUESTS !!!!!!
+
+ time: 18
+
+car : 2735179  time : 18 completed engine replacement.
+
+car : 2735179 time : 18 started shock absorber replacement.
+
+car : 3960674 time : 18 started transmission replacement.
+
+ time: 19
+
+ time: 20
+
+car : 2735179  time : 20 completed shock absorber replacement.
+
+car : 2735179 time : 20 started headlights adjustment.
+
+car : 6619273 time : 20 started flat tire repair.
+
+ time: 21
+
+car : 2735179  time : 21 completed headlights adjustment.
+
+car : 2735179 time : 21 started paint job.
+
+car : 6619273  time : 21 completed flat tire repair.
+
+ car : 6619273  time: 21 service complete.
+
+UNTIL NOW 30 COMPLETED REQUESTS !!!!!!
+
+ time: 22
+
+ time: 23
+
+ time: 0
+
+day 4
+
+car : 3960674  time : 0 completed transmission replacement.
+
+ car : 3960674  time: 0 service complete.
+
+UNTIL NOW 31 COMPLETED REQUESTS !!!!!!
+
+car : 3756413 time : 0 started exhaust replacement.
+
+car : 1512595 time : 0 started engine replacement.
+
+ time: 1
+
+ time: 2
+
+car : 3756413  time : 2 completed exhaust replacement.
+
+ car : 3756413  time: 2 service complete.
+
+UNTIL NOW 32 COMPLETED REQUESTS !!!!!!
+
+ time: 3
+
+ time: 4
+
+ time: 5
+
+car : 2735179  time : 5 completed paint job.
+
+ car : 2735179  time: 5 service complete.
+
+UNTIL NOW 33 COMPLETED REQUESTS !!!!!!
+
+ time: 6
+
+car : 1512595  time : 6 completed engine replacement.
+
+car : 1512595 time : 6 started alternator replacement.
+
+car : 8568724 time : 6 started engine replacement.
+
+ time: 7
+
+ time: 8
+
+car : 1512595  time : 8 completed alternator replacement.
+
+car : 1512595 time : 8 started battery replacement.
+
+car : 2506509 time : 8 started shock absorber replacement.
+
+ time: 9
+
+car : 1512595  time : 9 completed battery replacement.
+
+ car : 1512595  time: 9 service complete.
+
+UNTIL NOW 34 COMPLETED REQUESTS !!!!!!
+
+ time: 10
+
+car : 2506509  time : 10 completed shock absorber replacement.
+
+ car : 2506509  time: 10 service complete.
+
+UNTIL NOW 35 COMPLETED REQUESTS !!!!!!
+
+car : 2986376 time : 10 started oil change.
+
+car : 6193293 time : 10 started alternator replacement.
+
+ time: 11
+
+car : 2986376  time : 11 completed oil change.
+
+car : 2986376 time : 11 started battery replacement.
+
+ time: 12
+
+car : 8568724  time : 12 completed engine replacement.
+
+ car : 8568724  time: 12 service complete.
+
+UNTIL NOW 36 COMPLETED REQUESTS !!!!!!
+
+car : 1890055 time : 12 started brake repair.
+
+car : 9082407 time : 12 started engine replacement.
+
+car : 6193293  time : 12 completed alternator replacement.
+
+car : 6193293 time : 12 started paint job.
+
+car : 2986376  time : 12 completed battery replacement.
+
+car : 7099567 time : 12 started alternator replacement.
+
+ time: 13
+
+ time: 14
+
+car : 1890055  time : 14 completed brake repair.
+
+car : 1890055 time : 14 started diagnostics.
+
+car : 1415035 time : 14 started tire replacement.
+
+car : 7099567  time : 14 completed alternator replacement.
+
+ car : 7099567  time: 14 service complete.
+
+UNTIL NOW 37 COMPLETED REQUESTS !!!!!!
+
+car : 6501532 time : 14 started brake repair.
+
+ time: 15
+
+car : 1890055  time : 15 completed diagnostics.
+
+car : 1415035  time : 15 completed tire replacement.
+
+ car : 1415035  time: 15 service complete.
+
+UNTIL NOW 38 COMPLETED REQUESTS !!!!!!
+
+car : 9885513 time : 15 started shock absorber replacement.
+
+ time: 16
+
+car : 6501532  time : 16 completed brake repair.
+
+car : 6501532 time : 16 started headlights adjustment.
+
+car : 2278430 time : 16 started oil change.
+
+car : 9030226 time : 16 started timing belt replacement.
+
+ time: 17
+
+car : 9885513  time : 17 completed shock absorber replacement.
+
+ car : 9885513  time: 17 service complete.
+
+UNTIL NOW 39 COMPLETED REQUESTS !!!!!!
+
+car : 6501532  time : 17 completed headlights adjustment.
+
+car : 2278430  time : 17 completed oil change.
+
+ car : 2278430  time: 17 service complete.
+
+UNTIL NOW 40 COMPLETED REQUESTS !!!!!!
+
+ time: 18
+
+car : 9082407  time : 18 completed engine replacement.
+
+ car : 9082407  time: 18 service complete.
+
+UNTIL NOW 41 COMPLETED REQUESTS !!!!!!
+
+car : 2113471 time : 18 started brake repair.
+
+car : 6501532 time : 18 started transmission replacement.
+
+ time: 19
+
+ time: 20
+
+car : 2113471  time : 20 completed brake repair.
+
+ car : 2113471  time: 20 service complete.
+
+UNTIL NOW 42 COMPLETED REQUESTS !!!!!!
+
+car : 4766472 time : 20 started brake repair.
+
+car : 6193293  time : 20 completed paint job.
+
+ car : 6193293  time: 20 service complete.
+
+UNTIL NOW 43 COMPLETED REQUESTS !!!!!!
+
+car : 2986376 time : 20 started paint job.
+
+car : 9030226  time : 20 completed timing belt replacement.
+
+car : 9030226 time : 20 started tire replacement.
+
+ time: 21
+
+car : 9030226  time : 21 completed tire replacement.
+
+car : 9030226 time : 21 started diagnostics.
+
+ time: 22
+
+car : 4766472  time : 22 completed brake repair.
+
+car : 4766472 time : 22 started flat tire repair.
+
+car : 9030226  time : 22 completed diagnostics.
+
+car : 9030226 time : 22 started battery replacement.
+
+ time: 23
+
+car : 4766472  time : 23 completed flat tire repair.
+
+ car : 4766472  time: 23 service complete.
+
+UNTIL NOW 44 COMPLETED REQUESTS !!!!!!
+
+car : 1890055 time : 23 started alternator replacement.
+
+car : 9030226  time : 23 completed battery replacement.
+
+ car : 9030226  time: 23 service complete.
+
+UNTIL NOW 45 COMPLETED REQUESTS !!!!!!
+
+ time: 0
+
+day 5
+
+car : 6501532  time : 0 completed transmission replacement.
+
+car : 6501532 time : 0 started alternator replacement.
+
+car : 9802046 time : 0 started engine replacement.
+
+ time: 1
+
+car : 1890055  time : 1 completed alternator replacement.
+
+ car : 1890055  time: 1 service complete.
+
+UNTIL NOW 46 COMPLETED REQUESTS !!!!!!
+
+ time: 2
+
+car : 6501532  time : 2 completed alternator replacement.
+
+ car : 6501532  time: 2 service complete.
+
+UNTIL NOW 47 COMPLETED REQUESTS !!!!!!
+
+ time: 3
+
+ time: 4
+
+car : 2986376  time : 4 completed paint job.
+
+ time: 5
+
+ time: 6
+
+car : 9802046  time : 6 completed engine replacement.
+
+ car : 9802046  time: 6 service complete.
+
+UNTIL NOW 48 COMPLETED REQUESTS !!!!!!
+
+car : 2986376 time : 6 started engine replacement.
+
+ time: 7
+
+ time: 8
+
+ time: 9
+
+ time: 10
+
+ time: 11
+
+ time: 12
+
+car : 2986376  time : 12 completed engine replacement.
+
+ car : 2986376  time: 12 service complete.
+
+UNTIL NOW 49 COMPLETED REQUESTS !!!!!!
+
+car : 9195627 time : 12 started transmission replacement.
+
+ time: 13
+
+ time: 14
+
+ time: 15
+
+ time: 16
+
+ time: 17
+
+ time: 18
+
+car : 9195627  time : 18 completed transmission replacement.
+
+ car : 9195627  time: 18 service complete.
+
+UNTIL NOW 50 COMPLETED REQUESTS !!!!!!
+
+
+
+ All the requests completed = 50!!!!
+
